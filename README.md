@@ -3,6 +3,7 @@
 k8s gitea lab to take dev (sqlite based) to prod (mysql based)
 
 Implementation of three requirements for transitioning Gitea from development to production:
+Gitea static website url with ngrok: https://terrapin-immune-monthly.ngrok-free.app/raypwd1-8/test-gitea/src/branch/main
 
 ## 1. Persistent Repository Data
 
