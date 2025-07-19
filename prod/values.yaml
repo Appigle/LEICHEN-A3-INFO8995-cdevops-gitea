@@ -1,0 +1,32 @@
+redis-cluster:
+  enabled: false
+redis:
+  enabled: false
+# Disable built-in PostgreSQL - using external database
+postgresql:
+  enabled: false
+postgresql-ha:
+  enabled: false
+
+# Enable persistent storage for production
+persistence:
+  enabled: true
+  size: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  # storageClass: ""  # Use default storage class
+
+gitea:
+  config:
+    database:
+      DB_TYPE: postgres
+      HOST: gitea-postgresql-postgresql:5432 # External PostgreSQL service
+      NAME: gitea
+      USER: postgres
+      PASSWD: gitea123
+    session:
+      PROVIDER: memory
+    cache:
+      ADAPTER: memory
+    queue:
+      TYPE: level

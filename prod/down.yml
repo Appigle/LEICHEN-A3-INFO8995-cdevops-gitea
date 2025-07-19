@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Remove gitea production release and wait for completion
+      kubernetes.core.helm:
+        name: gitea-prod
+        release_namespace: default
+        state: absent
+        wait: true
+
+    - name: Remove external PostgreSQL database
+      kubernetes.core.helm:
+        name: gitea-postgresql
+        release_namespace: default
+        state: absent
+        wait: true
